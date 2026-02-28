@@ -11,6 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.text.html.HTML.Tag;
@@ -27,6 +30,20 @@ public class Ventana extends JFrame{
 		this.setLayout(null);
 		
 		//
+		/*
+		this.login();
+		this.registro();
+		*/
+		this.users();
+		
+		
+		
+		
+		
+	}
+	
+	public void login() {
+		
 		JPanel login_contenedor = new JPanel();
 		login_contenedor.setSize(400,400);
 		login_contenedor.setLocation(50,50);
@@ -91,7 +108,9 @@ public class Ventana extends JFrame{
 		login_contenedor.add(acces_btn);
 		this.repaint();
 		
-		
+	}
+	
+	public void registro() {
 		JPanel rgs_container = new JPanel();
 		
 		rgs_container.setBounds(500, 50, 400, 800);
@@ -180,8 +199,72 @@ public class Ventana extends JFrame{
 		JButton register_bn = new JButton("crear cuenta");
 		register_bn.setBounds(50, 490, 300, 60);
 		rgs_container.add(register_bn);
-		this.repaint();
+		
 		
 	}
+	public void users() {
+		JPanel panel_usuarios = new JPanel();
+		panel_usuarios.setSize(900, 500);
+		panel_usuarios.setLocation(50,10);
+		panel_usuarios.setBackground(Color.PINK);
+		JTextArea user_text =new JTextArea("Usuarios");
+		user_text.setLocation(400,10);
+		user_text.setSize(70,50);
+		//YYY.setVerticalAlignment(JLabel.CENTER);
+		//tittle_tag_two.setHorizontalAlignment(JLabel.CENTER);
+		panel_usuarios.add(user_text);
+		this.add(panel_usuarios);
+		
+		JButton boton_descarga = new JButton();
+		boton_descarga.setText("Descargar");
+		boton_descarga.setSize(70, 35);
+		boton_descarga.setFont(new Font("Arial",Font.ITALIC,11));
+		boton_descarga.setLocation(480,55);
+		panel_usuarios.add(boton_descarga);
+		
+		JButton boton_anadir = new JButton();
+		boton_anadir.setText("Añadir");
+		boton_anadir.setSize(70, 35);
+		boton_anadir.setFont(new Font("Arial",Font.ITALIC,11));
+		boton_anadir.setLocation(530,55);
+		panel_usuarios.add(boton_anadir);
+		
+		this.repaint();
+		
+		String [] table_head = {"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"};
+		
+		Object [][] table_body = {
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				{"Nombre", "Apellidos","Correo electronico","Número de control","Semestre", "Carreras", "Acciones"},
+				};
+		JTable students = new JTable(table_body, table_head);
+		JScrollPane final_table = new JScrollPane(students);
+		final_table.setSize(700,150);
+		final_table.setLocation(100,100);
+		panel_usuarios.add(final_table);
+		panel_usuarios.repaint();
+		
+	}
+	
 
 }
