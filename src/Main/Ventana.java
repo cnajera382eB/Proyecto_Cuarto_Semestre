@@ -9,6 +9,9 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollBar;
@@ -19,22 +22,46 @@ import javax.swing.JTextField;
 import javax.swing.text.html.HTML.Tag;
 
 public class Ventana extends JFrame{
+	
 
 	public Ventana() {
-		this.setVisible(true);
-		this.setSize(500,500);
+		
+		this.setSize(1000,600);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.setBounds(400,400,650,650);
-		this.setTitle("Holamundo");
+		this.setTitle("Hola mundo");
 		this.setLayout(null);
 		
-		//
-		/*
-		this.login();
-		this.registro();
-		*/
-		this.users();
+		
+		JMenuBar Barra = new JMenuBar();
+		this.setJMenuBar(Barra);
+		JMenu menu_uno = new JMenu("Archivo");
+		Barra.add(menu_uno);
+		JMenuItem opt1_menu1= new JMenuItem("Abrir");
+		menu_uno.add(opt1_menu1);
+		JMenuItem opt2_menu1= new JMenuItem("Cerrar");
+		menu_uno.add(opt2_menu1);
+
+		
+		JMenu menu_dos = new JMenu("Guardar");
+		menu_uno.add(menu_dos);
+		
+		JMenuItem opt1_menu2= new JMenuItem("Guardar");
+		menu_dos.add(opt1_menu2);
+		JMenuItem opt2_menu2= new JMenuItem("Guardar como");
+		menu_dos.add(opt2_menu2);
+		
+		
+		menu_uno.addSeparator();
+		
+		//this.login();
+		//this.registro();
+		//this.users();
+		this.login_new();
+		
+		this.setVisible(true);
+		this.repaint();
 		
 		
 		
@@ -47,7 +74,7 @@ public class Ventana extends JFrame{
 		JPanel login_contenedor = new JPanel();
 		login_contenedor.setSize(400,400);
 		login_contenedor.setLocation(50,50);
-		login_contenedor.setBackground(Color.RED);
+		login_contenedor.setBackground(Color.cyan);
 		//login_contenedor.setOpaque();
 		this.add(login_contenedor);
 		
@@ -56,10 +83,10 @@ public class Ventana extends JFrame{
 		
 		//Mensaje acceder
 		JLabel tag_tittle = new JLabel();
-		tag_tittle.setText("Acceder");
+		tag_tittle.setText("Bienvenido");
 		tag_tittle.setSize(150,120);
 		tag_tittle.setLocation(125,20);
-		tag_tittle.setBackground(Color.white);
+		tag_tittle.setBackground(Color.cyan);
 		tag_tittle.setOpaque(true);
 		tag_tittle.setFont(new Font("Arial",Font.PLAIN,22));
 		tag_tittle.setVerticalAlignment(JLabel.CENTER);
@@ -205,7 +232,7 @@ public class Ventana extends JFrame{
 	public void users() {
 		JPanel panel_usuarios = new JPanel();
 		panel_usuarios.setSize(900, 500);
-		panel_usuarios.setLocation(50,10);
+		panel_usuarios.setLocation(20,10);
 		panel_usuarios.setBackground(Color.PINK);
 		JTextArea user_text =new JTextArea("Usuarios");
 		user_text.setLocation(400,10);
@@ -217,14 +244,14 @@ public class Ventana extends JFrame{
 		
 		JButton boton_descarga = new JButton();
 		boton_descarga.setText("Descargar");
-		boton_descarga.setSize(70, 35);
+		boton_descarga.setSize(20, 35);
 		boton_descarga.setFont(new Font("Arial",Font.ITALIC,11));
 		boton_descarga.setLocation(480,55);
 		panel_usuarios.add(boton_descarga);
 		
 		JButton boton_anadir = new JButton();
 		boton_anadir.setText("Añadir");
-		boton_anadir.setSize(70, 35);
+		boton_anadir.setSize(20, 35);
 		boton_anadir.setFont(new Font("Arial",Font.ITALIC,11));
 		boton_anadir.setLocation(530,55);
 		panel_usuarios.add(boton_anadir);
@@ -265,6 +292,64 @@ public class Ventana extends JFrame{
 		panel_usuarios.repaint();
 		
 	}
+	
+	public void login_new () {
+		
+		JPanel login_contenedor = new JPanel();
+		login_contenedor.setSize(400,400);
+		login_contenedor.setLocation(50,50);
+		login_contenedor.setBackground(Color.cyan);
+		//login_contenedor.setOpaque();
+		this.add(login_contenedor);
+		
+		login_contenedor.setLayout(null);
+		this.setLayout(null);
+		
+		//Mensaje acceder
+		JLabel tag_tittle = new JLabel();
+		tag_tittle.setText("Bienvenido");
+		tag_tittle.setSize(180,140);
+		tag_tittle.setLocation(125,5);
+		tag_tittle.setBackground(Color.cyan);
+		tag_tittle.setOpaque(true);
+		tag_tittle.setFont(new Font("Arial",Font.PLAIN,22));
+		tag_tittle.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor.add(tag_tittle);
+		
+		//Contenedor del nombre del usuario
+		JTextField email_input = new JTextField();
+		email_input.setSize(180,40);
+		email_input.setLocation(120,135);
+		login_contenedor.add(email_input);
+		
+		//Contenedor de la contraseña
+		JTextField password_input = new JTextField();
+		password_input.setSize(180,40);
+		password_input.setLocation(120,240);
+		login_contenedor.add(password_input);
+		
+		
+		//Boton del mensaje "Nombre del usuario"
+		JLabel texto_generico_uno = new JLabel("Ingrese su email");
+		texto_generico_uno.setFont(new Font("Arial",Font.PLAIN,16));
+		texto_generico_uno.setSize(1170,150);
+		texto_generico_uno.setLocation(125,80);
+		login_contenedor.add(texto_generico_uno);
+		
+		
+		//Boton del mensaje "Olvido su contraseña"
+		JLabel texto_generico_dos = new JLabel("Ingrese su contraseña");
+		texto_generico_dos.setFont(new Font("Arial",Font.PLAIN,16));
+		texto_generico_dos.setSize(1170,150);
+		texto_generico_dos.setLocation(125,155);
+		login_contenedor.add(texto_generico_dos);
+		
+	
+		this.repaint();
+		
+	}
+
 	
 
 }
