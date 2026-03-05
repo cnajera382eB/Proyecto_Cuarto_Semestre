@@ -2,7 +2,10 @@ package Main;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 
+import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -20,6 +23,7 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.text.html.HTML.Tag;
+import java.awt.image.*;
 
 public class Ventana extends JFrame{
 	
@@ -30,8 +34,20 @@ public class Ventana extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.setBounds(400,400,650,650);
-		this.setTitle("Hola mundo");
+		this.setTitle("Login");
 		this.setLayout(null);
+		
+		
+		
+		try {
+			Image iconImage = ImageIO.read(getClass().getResource("/Imagenes/reinoalejado.png"));
+			
+			this.setIconImage(iconImage);
+		} catch (Exception e) {
+
+			e.printStackTrace();
+			// TODO: handle exception
+		}
 		
 		
 		JMenuBar Barra = new JMenuBar();
