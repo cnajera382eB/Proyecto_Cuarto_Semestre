@@ -6,6 +6,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -40,7 +41,7 @@ public class Ventana extends JFrame{
 		
 		
 		try {
-			Image iconImage = ImageIO.read(getClass().getResource("/Imagenes/reinoalejado.png"));
+			Image iconImage = ImageIO.read(getClass().getResource("/Imagenes/JugadorDosAnimated.gif"));
 			
 			this.setIconImage(iconImage);
 		} catch (Exception e) {
@@ -74,7 +75,8 @@ public class Ventana extends JFrame{
 		//this.login();
 		//this.registro();
 		//this.users();
-		this.login_new();
+		//this.login_new();
+		this.calculadora();
 		
 		this.setVisible(true);
 		this.repaint();
@@ -314,7 +316,7 @@ public class Ventana extends JFrame{
 		JPanel login_contenedor = new JPanel();
 		login_contenedor.setSize(400,400);
 		login_contenedor.setLocation(50,50);
-		login_contenedor.setBackground(Color.cyan);
+		login_contenedor.setBackground(Color.BLUE);
 		//login_contenedor.setOpaque();
 		this.add(login_contenedor);
 		
@@ -324,11 +326,11 @@ public class Ventana extends JFrame{
 		//Mensaje acceder
 		JLabel tag_tittle = new JLabel();
 		tag_tittle.setText("Bienvenido");
-		tag_tittle.setSize(180,140);
+		tag_tittle.setSize(225,140);
 		tag_tittle.setLocation(125,5);
-		tag_tittle.setBackground(Color.cyan);
-		tag_tittle.setOpaque(true);
-		tag_tittle.setFont(new Font("Arial",Font.PLAIN,22));
+		tag_tittle.setBackground(Color.WHITE);
+		//tag_tittle.setOpaque(true);
+		tag_tittle.setFont(new Font("Bond",Font.ITALIC,40));
 		tag_tittle.setVerticalAlignment(JLabel.CENTER);
 		tag_tittle.setHorizontalAlignment(JLabel.CENTER);
 		login_contenedor.add(tag_tittle);
@@ -366,6 +368,50 @@ public class Ventana extends JFrame{
 		
 	}
 
-	
+	public void calculadora () {
+
+		JLabel panel_usuario = new JLabel();
+		panel_usuario.setSize(500,700);
+		panel_usuario.setLocation(250,50);
+		panel_usuario.setBackground(Color.DARK_GRAY);
+		panel_usuario.setLabelFor(null);
+		this.add(panel_usuario);
+		
+		JLabel contenedor_numeros = new JLabel("180.00");
+		contenedor_numeros.setSize(480,40);
+		contenedor_numeros.setLocation(10,10);
+		contenedor_numeros.setOpaque(true);
+		contenedor_numeros.setBackground(Color.WHITE);
+		contenedor_numeros.setFont(new Font("Arial", Font.BOLD,22));
+		contenedor_numeros.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+		panel_usuario.add(contenedor_numeros);
+		
+		int cor_x= 30, cor_y =60;
+		String [] botones = {"CE","","","","7","8","9","/","4","5","6","*","1","2","3","+","0",".","-","="};
+		
+		for (int i = 0; i < 20; i++) {
+			JButton ce= new JButton(botones[i]);
+			ce.setSize(100,100);
+			ce.setLocation(cor_x,cor_y);
+			panel_usuario.add(ce);
+			
+			cor_x+=110;
+			panel_usuario.add(ce);
+			
+			if (cor_x>=420) {
+				cor_x=30;
+				cor_y+=110;
+			}
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
 
 }
