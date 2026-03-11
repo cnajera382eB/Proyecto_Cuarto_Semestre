@@ -1,3 +1,4 @@
+
 package Main;
 
 import java.awt.BorderLayout;
@@ -39,7 +40,7 @@ public class Ventana extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.setBounds(400,400,650,650);
-		this.setTitle("Login");
+		this.setTitle("Calculando interés");
 		this.setLayout(null);
 		
 		
@@ -81,7 +82,8 @@ public class Ventana extends JFrame{
 		//this.users();
 		//this.login_new();
 		//this.calculadora();
-		this.caculadora_layout();
+		//this.caculadora_layout();
+		this.calcular_interes();
 		
 		this.setVisible(true);
 		this.repaint();
@@ -469,6 +471,182 @@ public class Ventana extends JFrame{
 			ce.setFont(new Font("Arial",Font.BOLD,22));
 			sidebar.add(ce);
 		}
+		
+		this.repaint();
+		
+	}
+	
+	public void calcular_interes () {
+		
+		
+		//Panel rosado
+		JPanel login_contenedor_tres = new JPanel();
+		login_contenedor_tres.setSize(350,150);
+		login_contenedor_tres.setLocation(75,340);
+		login_contenedor_tres.setBackground(Color.PINK);
+		
+		this.add(login_contenedor_tres);
+		login_contenedor_tres.setLayout(null);
+		this.setLayout(null);
+		
+		
+		//panel verde
+		JPanel login_contenedor_dos = new JPanel();
+		login_contenedor_dos.setSize(350,200);
+		login_contenedor_dos.setLocation(75,100);
+		login_contenedor_dos.setBackground(Color.green);
+		
+		this.add(login_contenedor_dos);
+		
+		login_contenedor_dos.setLayout(null);
+		this.setLayout(null);
+		
+		
+		//panel blanco de fondo
+		JPanel login_contenedor = new JPanel();
+		login_contenedor.setSize(400,1000
+				);
+		login_contenedor.setLocation(50,50);
+		login_contenedor.setBackground(Color.white);
+		//login_contenedor.setOpaque();
+		this.add(login_contenedor);
+		
+		login_contenedor.setLayout(null);
+		this.setLayout(null);
+		
+		//Mensaje acceder
+		JLabel tag_tittle = new JLabel();
+		tag_tittle.setText("Interes");
+		tag_tittle.setSize(78,50);
+		tag_tittle.setLocation(10,5);
+		tag_tittle.setBackground(Color.white);
+		tag_tittle.setOpaque(true);
+		tag_tittle.setFont(new Font("Times New Rome",Font.PLAIN,17));
+		tag_tittle.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle.setHorizontalAlignment(JLabel.CENTER);
+		tag_tittle.setForeground(Color.RED);
+		login_contenedor.add(tag_tittle);
+		
+	
+		
+		//Contenedor de capital
+		JTextField caja_uno = new JTextField();
+		caja_uno.setSize(200,25);
+		caja_uno.setLocation(140,50);
+		caja_uno.setOpaque(true);
+		login_contenedor_dos.add(caja_uno);
+		
+		
+		//Contenedor de tiempo
+		JTextField caja_dos = new JTextField();
+		caja_dos.setSize(200,25);
+		caja_dos.setLocation(140,100);
+		login_contenedor_dos.add(caja_dos);
+		
+		//Contenedor de tasa de interes
+		JTextField caja_tres = new JTextField();
+		caja_tres.setSize(200,25);
+		caja_tres.setLocation(140,150);
+		login_contenedor_dos.add(caja_tres);
+		
+		//Contenedor de interes
+		JTextField caja_cuatro = new JTextField();
+		caja_cuatro.setSize(200,25);
+		caja_cuatro.setLocation(140,50);
+		caja_cuatro.setOpaque(false);
+		login_contenedor_tres.add(caja_cuatro);
+		this.repaint();
+		
+		//Contenedor de monto
+		JTextField caja_cinco = new JTextField();
+		caja_cinco.setSize(200,25);
+		caja_cinco.setLocation(140,100);
+		login_contenedor_tres.add(caja_cinco);
+		this.repaint();
+		
+		
+		
+		//Mensajes de las opciones
+		JLabel tag_tittle_uno = new JLabel();
+		tag_tittle_uno.setText("Capital");
+		tag_tittle_uno.setSize(50,25);
+		tag_tittle_uno.setLocation(10,50);
+		tag_tittle_uno.setBackground(Color.green);
+		tag_tittle_uno.setOpaque(true);
+		tag_tittle_uno.setFont(new Font("Times New Rome",Font.PLAIN,16));
+		tag_tittle_uno.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_uno.setHorizontalAlignment(JLabel.CENTER);
+		tag_tittle_uno.setForeground(Color.BLACK);
+		login_contenedor_dos.add(tag_tittle_uno);
+		
+		JLabel tag_tittle_dos = new JLabel();
+		tag_tittle_dos.setText("Tiempo");
+		tag_tittle_dos.setSize(50,25);
+		tag_tittle_dos.setLocation(10,150);
+		tag_tittle_dos.setBackground(Color.green);
+		tag_tittle_dos.setOpaque(true);
+		tag_tittle_dos.setFont(new Font("Times New Rome",Font.PLAIN,16));
+		tag_tittle_dos.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_dos.setHorizontalAlignment(JLabel.CENTER);
+		tag_tittle_dos.setForeground(Color.BLACK);
+		login_contenedor_dos.add(tag_tittle_dos);
+		
+		JLabel tag_tittle_tres = new JLabel();
+		tag_tittle_tres.setText("Tasa de interés");
+		tag_tittle_tres.setSize(50,25);
+		tag_tittle_tres.setLocation(10,100);
+		tag_tittle_tres.setBackground(Color.green);
+		tag_tittle_tres.setOpaque(true);
+		tag_tittle_tres.setFont(new Font("Times New Rome",Font.PLAIN,16));
+		tag_tittle_tres.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_tres.setHorizontalAlignment(JLabel.CENTER);
+		tag_tittle_tres.setForeground(Color.BLACK);
+		login_contenedor_dos.add(tag_tittle_tres);
+		
+		JLabel tag_tittle_cuatro = new JLabel();
+		tag_tittle_cuatro.setText("Interés");
+		tag_tittle_cuatro.setSize(50,25);
+		tag_tittle_cuatro.setLocation(10,50);
+		tag_tittle_cuatro.setBackground(Color.PINK);
+		tag_tittle_cuatro.setOpaque(true);
+		tag_tittle_cuatro.setFont(new Font("Times New Rome",Font.PLAIN,16));
+		tag_tittle_cuatro.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_cuatro.setHorizontalAlignment(JLabel.CENTER);
+		tag_tittle_cuatro.setForeground(Color.BLACK);
+		login_contenedor_tres.add(tag_tittle_cuatro);
+		
+		JLabel tag_tittle_cinco = new JLabel();
+		tag_tittle_cinco.setText("Monto");
+		tag_tittle_cinco.setSize(50,25);
+		tag_tittle_cinco.setLocation(10,100);
+		tag_tittle_cinco.setBackground(Color.PINK);
+		tag_tittle_cinco.setOpaque(true);
+		tag_tittle_cinco.setFont(new Font("Times New Rome",Font.PLAIN,16));
+		tag_tittle_cinco.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_cinco.setHorizontalAlignment(JLabel.CENTER);
+		tag_tittle_cinco.setForeground(Color.BLACK);
+		login_contenedor_tres.add(tag_tittle_cinco);
+		
+		
+		
+		
+		
+		
+		//Boton de ACEPTAR
+		JButton acces_btn = new JButton();
+		acces_btn.setText("Calcular");
+		acces_btn.setSize(100, 25);
+		acces_btn.setFont(new Font("Arial",Font.ITALIC,16));
+		acces_btn.setLocation(75,240);
+		login_contenedor.add(acces_btn);
+		
+		//boton de CANCELAR
+		JButton acces_btn_dos = new JButton();
+		acces_btn_dos.setText("Cancelar");
+		acces_btn_dos.setSize(100, 25);
+		acces_btn_dos.setFont(new Font("Arial",Font.ITALIC,16));
+		acces_btn_dos.setLocation(225,240);
+		login_contenedor.add(acces_btn_dos);
 		
 		this.repaint();
 		
