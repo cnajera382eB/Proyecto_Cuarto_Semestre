@@ -1,12 +1,19 @@
 
 package Main;
 
+import java.awt.BasicStroke;
 import java.awt.BorderLayout;
+
+
+
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.File;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -83,7 +90,9 @@ public class Ventana extends JFrame{
 		//this.login_new();
 		//this.calculadora();
 		//this.caculadora_layout();
-		this.calcular_interes();
+		//this.calcular_interes();
+		this.pintar();
+		
 		
 		this.setVisible(true);
 		this.repaint();
@@ -651,5 +660,61 @@ public class Ventana extends JFrame{
 		this.repaint();
 		
 	}
+	
+	public void pintar () {
+		JPanel pane = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                
+                Graphics2D g2d = (Graphics2D) g;
+                g2d.drawLine(0, 0, 1000, 700);
+                g2d.setColor(Color.orange);
+                g2d.drawOval(100, 100, 150, 50);
+                
+                g2d.setStroke(new  BasicStroke(3));
+                g2d.setColor(Color.magenta);
+                g2d.drawPolygon(new int [] {300,100,500}, new int [] {100,300,500} , 3);
+                
+                g2d.drawRect(250, 400, 100, 100);
+                g2d.drawRoundRect(500,150,100,100,10,10);
+                g2d.drawArc(400, 100, 100, 100, 0, 360);
+                
+                g2d.setFont(new Font("Arial", Font.BOLD,30));
+                g2d.drawString("Sirnight", 100, 100);
+                
+                g2d.fillOval(500, 100, 150, 55);
+                
+                g2d.fillPolygon(new int [] {500,300,700}, new int [] {300,500,500},3);
+                
+                g2d.setColor(Color.cyan);
+                g2d.fillRoundRect(300, 250, 100, 95, 10, 10);
+                g2d.fillArc(450, 150, 100, 100, 0, 160);
+                
+                
+				try {
+					
+					BufferedImage image = ImageIO.read(new File("src/iconodeljuego.png"));
+					g2d.drawImage(image, 0, 0, null);
+					
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+                
+
+            }
+        };
+        
+        
+        
+		
+	
+        pane.setSize(1000,700);
+        pane.setLocation(0,0);
+        this.add(pane);
+	}
+	
+	
+	
 
 }
