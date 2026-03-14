@@ -91,8 +91,8 @@ public class Ventana extends JFrame{
 		//this.calculadora();
 		//this.caculadora_layout();
 		//this.calcular_interes();
-		this.pintar();
-		
+		//this.pintar();
+		this.registro_perfeccionado();
 		
 		this.setVisible(true);
 		this.repaint();
@@ -714,6 +714,290 @@ public class Ventana extends JFrame{
         this.add(pane);
 	}
 	
+	
+	public void registro_perfeccionado () {
+		//Panel rosado 1
+				JPanel login_contenedor_tres = new JPanel();
+				login_contenedor_tres.setSize(350,200);
+				login_contenedor_tres.setLocation(400,30);
+				login_contenedor_tres.setBackground(Color.PINK);
+				
+				this.add(login_contenedor_tres);
+				login_contenedor_tres.setLayout(null);
+				this.setLayout(null);
+				
+				
+				//panel verde 1
+				JPanel login_contenedor_dos = new JPanel();
+				login_contenedor_dos.setSize(350,300);
+				login_contenedor_dos.setLocation(10,49);
+				login_contenedor_dos.setBackground(Color.cyan);
+				
+				this.add(login_contenedor_dos);
+				
+				login_contenedor_dos.setLayout(null);
+				this.setLayout(null);
+				
+				
+				//Panel rosado 2
+				JPanel login_contenedor_cuatro = new JPanel();
+				login_contenedor_cuatro.setSize(350,300);
+				login_contenedor_cuatro.setLocation(10,350);
+				login_contenedor_cuatro.setBackground(Color.PINK);
+				
+				this.add(login_contenedor_cuatro);
+				login_contenedor_cuatro.setLayout(null);
+				this.setLayout(null);
+				
+				
+				//panel verde 2
+				JPanel login_contenedor_cinco = new JPanel();
+				login_contenedor_cinco.setSize(350,200);
+				login_contenedor_cinco.setLocation(400,300);
+				login_contenedor_cinco.setBackground(Color.cyan);
+				
+				this.add(login_contenedor_cinco);
+				
+				login_contenedor_cinco.setLayout(null);
+				this.setLayout(null);
+				
+				
+				//panel blanco de fondo
+				JPanel login_contenedor = new JPanel();
+				login_contenedor.setSize(1000,8000);
+				login_contenedor.setLocation(10,20);
+				login_contenedor.setBackground(Color.green);
+				//login_contenedor.setOpaque();
+				this.add(login_contenedor);
+				
+				login_contenedor.setLayout(null);
+				this.setLayout(null);
+				
+				//Mensaje acceder
+				JLabel tag_tittle = new JLabel();
+				tag_tittle.setText("Registro de usuarios");
+				tag_tittle.setSize(170,40);
+				tag_tittle.setLocation(10,0);
+				tag_tittle.setBackground(Color.green);
+				tag_tittle.setOpaque(true);
+				tag_tittle.setFont(new Font("Times New Rome",Font.PLAIN,13));
+				tag_tittle.setVerticalAlignment(JLabel.CENTER);
+				tag_tittle.setHorizontalAlignment(JLabel.CENTER);
+				tag_tittle.setForeground(Color.RED);
+				login_contenedor.add(tag_tittle);
+				
+			
+				
+				//Contenedor de nombre
+				JTextField caja_uno = new JTextField();
+				caja_uno.setSize(200,25);
+				caja_uno.setLocation(140,20);
+				caja_uno.setOpaque(true);
+				login_contenedor_dos.add(caja_uno);
+				
+				
+				//Contenedor de apellido paterno
+				JTextField caja_dos = new JTextField();
+				caja_dos.setSize(200,25);
+				caja_dos.setLocation(140,50);
+				login_contenedor_dos.add(caja_dos);
+				
+				//Contenedor de tasa de materno
+				JTextField caja_tres = new JTextField();
+				caja_tres.setSize(200,25);
+				caja_tres.setLocation(140,80);
+				login_contenedor_dos.add(caja_tres);
+				
+				//Contenedor de fecha de nacimiento
+				JTextField caja_cuatro = new JTextField();
+				caja_cuatro.setSize(100,25);
+				caja_cuatro.setLocation(140,110);
+				login_contenedor_dos.add(caja_cuatro);
+				
+				JRadioButton M_sexo = new JRadioButton("M");
+				M_sexo.setSize(140,25);
+				M_sexo.setLocation(140, 145);
+				M_sexo.setBackground(Color.cyan);
+				login_contenedor_dos.add(M_sexo);
+				
+				JRadioButton F_sexo = new JRadioButton("F");
+				F_sexo.setSize(170,25);
+				F_sexo.setLocation(140, 170);
+				F_sexo.setBackground(Color.cyan);
+				login_contenedor_dos.add(F_sexo);
+				
+				JRadioButton D_sexo = new JRadioButton("Prefiero no responder");
+				D_sexo.setSize(140,25);
+				D_sexo.setLocation(140, 150);
+				D_sexo.setBackground(Color.cyan);
+				login_contenedor_dos.add(D_sexo);
+				
+				String [] paises = {"Perú", "México","EEUU","China", "Sudcalifornia", "Egipto","España" }	;
+				JComboBox paises_combo = new JComboBox(paises);
+				paises_combo.setBounds(140, 200, 80, 70);
+				login_contenedor_dos.add(paises_combo);
+				
+				
+				
+				
+				
+				
+				//Mensajes de las opciones
+				JLabel tag_tittle_uno = new JLabel();
+				tag_tittle_uno.setText("Nombres");
+				tag_tittle_uno.setSize(100,25);
+				tag_tittle_uno.setLocation(10,20);
+				tag_tittle_uno.setBackground(Color.cyan);
+				tag_tittle_uno.setOpaque(true);
+				tag_tittle_uno.setFont(new Font("Times New Rome",Font.PLAIN,12));
+				tag_tittle_uno.setVerticalAlignment(JLabel.CENTER);
+				tag_tittle_uno.setHorizontalAlignment(JLabel.CENTER);
+				tag_tittle_uno.setForeground(Color.BLACK);
+				login_contenedor_dos.add(tag_tittle_uno);
+				
+				JLabel tag_tittle_dos = new JLabel();
+				tag_tittle_dos.setText("Apellido paterno");
+				tag_tittle_dos.setSize(100,25);
+				tag_tittle_dos.setLocation(10,50);
+				tag_tittle_dos.setBackground(Color.cyan);
+				tag_tittle_dos.setOpaque(true);
+				tag_tittle_dos.setFont(new Font("Times New Rome",Font.PLAIN,12));
+				tag_tittle_dos.setVerticalAlignment(JLabel.CENTER);
+				tag_tittle_dos.setHorizontalAlignment(JLabel.CENTER);
+				tag_tittle_dos.setForeground(Color.BLACK);
+				login_contenedor_dos.add(tag_tittle_dos);
+				
+				JLabel tag_tittle_tres = new JLabel();
+				tag_tittle_tres.setText("Apellido materno");
+				tag_tittle_tres.setSize(100,25);
+				tag_tittle_tres.setLocation(10,80);
+				tag_tittle_tres.setBackground(Color.cyan);
+				tag_tittle_tres.setOpaque(true);
+				tag_tittle_tres.setFont(new Font("Times New Rome",Font.PLAIN,12));
+				tag_tittle_tres.setVerticalAlignment(JLabel.CENTER);
+				tag_tittle_tres.setHorizontalAlignment(JLabel.CENTER);
+				tag_tittle_tres.setForeground(Color.BLACK);
+				login_contenedor_dos.add(tag_tittle_tres);
+				
+				JLabel tag_tittle_cuatro = new JLabel();
+				tag_tittle_cuatro.setText("Fecha de nacimiento");
+				tag_tittle_cuatro.setSize(100,25);
+				tag_tittle_cuatro.setLocation(10,110);
+				tag_tittle_cuatro.setBackground(Color.cyan);
+				tag_tittle_cuatro.setOpaque(true);
+				tag_tittle_cuatro.setFont(new Font("Times New Rome",Font.PLAIN,12));
+				tag_tittle_cuatro.setVerticalAlignment(JLabel.CENTER);
+				tag_tittle_cuatro.setHorizontalAlignment(JLabel.CENTER);
+				tag_tittle_cuatro.setForeground(Color.BLACK);
+				login_contenedor_dos.add(tag_tittle_cuatro);
+				
+				JLabel tag_tittle_cinco = new JLabel();
+				tag_tittle_cinco.setText("Sexo");
+				tag_tittle_cinco.setSize(140,25);
+				tag_tittle_cinco.setLocation(10,150);
+				tag_tittle_cinco.setBackground(Color.cyan);
+				tag_tittle_cinco.setOpaque(true);
+				tag_tittle_cinco.setFont(new Font("Times New Rome",Font.PLAIN,12));
+				tag_tittle_cinco.setVerticalAlignment(JLabel.CENTER);
+				tag_tittle_cinco.setHorizontalAlignment(JLabel.CENTER);
+				tag_tittle_cinco.setForeground(Color.BLACK);
+				login_contenedor_dos.add(tag_tittle_cinco);
+				
+				JLabel tag_tittle_seis = new JLabel();
+				tag_tittle_seis.setText("Nacionalidad");
+				tag_tittle_seis.setSize(100,25);
+				tag_tittle_seis.setLocation(10,220);
+				tag_tittle_seis.setBackground(Color.cyan);
+				tag_tittle_seis.setOpaque(true);
+				tag_tittle_seis.setFont(new Font("Times New Rome",Font.PLAIN,12));
+				tag_tittle_seis.setVerticalAlignment(JLabel.CENTER);
+				tag_tittle_seis.setHorizontalAlignment(JLabel.CENTER);
+				tag_tittle_seis.setForeground(Color.BLACK);
+				login_contenedor_dos.add(tag_tittle_seis);
+				
+				
+				
+				
+				//ventana 3
+				JCheckBox boton_uno = new JCheckBox("Mostrar foto de perfil");
+				boton_uno.setSize(1000,40);
+				boton_uno.setLocation(50, 125);
+				boton_uno.setBackground(Color.PINK);
+				login_contenedor_tres.add(boton_uno);
+				
+				JCheckBox boton_dos = new JCheckBox("Mostrar fecha de nacimiento");
+				boton_dos.setSize(1000,40);
+				boton_dos.setLocation(50, 155);
+				boton_dos.setBackground(Color.PINK);
+				login_contenedor_tres.add(boton_dos);
+				
+				
+				
+				
+				
+				
+				//Boton de NUEVO
+				JButton acces_btn = new JButton();
+				acces_btn.setText("Nuevo");
+				acces_btn.setSize(100, 30);
+				acces_btn.setFont(new Font("Arial",Font.ITALIC,16));
+				acces_btn.setLocation(100,30);
+				login_contenedor_cinco.add(acces_btn);
+				
+				//boton de GUARDAR
+				JButton acces_btn_dos = new JButton();
+				acces_btn_dos.setText("Guardar");
+				acces_btn_dos.setSize(100, 30);
+				acces_btn_dos.setFont(new Font("Arial",Font.ITALIC,16));
+				acces_btn_dos.setLocation(75,100);
+				login_contenedor_cinco.add(acces_btn_dos);
+				
+				//boton de SALIR
+				JButton acces_btn_tres = new JButton();
+				acces_btn_tres.setText("Cancelar");
+				acces_btn_tres.setSize(100, 30);
+				acces_btn_tres.setFont(new Font("Arial",Font.ITALIC,16));
+				acces_btn_tres.setLocation(75,170);
+				login_contenedor_cinco.add(acces_btn_tres);
+				
+				this.repaint();
+				
+				JLabel tag_contenedor_descripcion = new JLabel();
+				tag_contenedor_descripcion.setText("Descripción");
+				tag_contenedor_descripcion.setSize(100,25);
+				tag_contenedor_descripcion.setLocation(20,10);
+				tag_contenedor_descripcion.setBackground(Color.pink);
+				tag_contenedor_descripcion.setOpaque(true);
+				tag_contenedor_descripcion.setFont(new Font("Times New Rome",Font.PLAIN,12));
+				tag_contenedor_descripcion.setVerticalAlignment(JLabel.CENTER);
+				tag_contenedor_descripcion.setHorizontalAlignment(JLabel.CENTER);
+				tag_contenedor_descripcion.setForeground(Color.BLACK);
+				login_contenedor_cuatro.add(tag_contenedor_descripcion);
+				
+				JLabel tag_contenedor_preferencias = new JLabel();
+				tag_contenedor_preferencias.setText("Preferencias");
+				tag_contenedor_preferencias.setSize(100,25);
+				tag_contenedor_preferencias.setLocation(190,10);
+				tag_contenedor_preferencias.setBackground(Color.pink);
+				tag_contenedor_preferencias.setOpaque(true);
+				tag_contenedor_preferencias.setFont(new Font("Times New Rome",Font.PLAIN,12));
+				tag_contenedor_preferencias.setVerticalAlignment(JLabel.CENTER);
+				tag_contenedor_preferencias.setHorizontalAlignment(JLabel.CENTER);
+				tag_contenedor_preferencias.setForeground(Color.BLACK);
+				login_contenedor_cuatro.add(tag_contenedor_preferencias);
+				
+				JTextField contenedor_caja_uno = new JTextField();
+				contenedor_caja_uno.setSize(150,200);
+				contenedor_caja_uno.setLocation(20,50);
+				contenedor_caja_uno.setOpaque(true);
+				login_contenedor_cuatro.add(contenedor_caja_uno);
+				
+				String [] preferencais_seleccion = {"Mejorar", "Reducir recursos","Papa rellena","Hate premiun", "Modo DIOS", "En Garde","Activo torre" }	;
+				JComboBox p_s_combo = new JComboBox(preferencais_seleccion);
+				p_s_combo.setBounds(210, 50, 70, 50);
+				login_contenedor_cuatro.add(p_s_combo);
+		
+	}
 	
 	
 
