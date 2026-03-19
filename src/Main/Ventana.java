@@ -12,6 +12,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -84,15 +86,15 @@ public class Ventana extends JFrame{
 		
 		menu_uno.addSeparator();
 		
-		//this.login();
-		//this.registro();
+		this.login();
+		this.registro();
 		//this.users();
 		//this.login_new();
 		//this.calculadora();
 		//this.caculadora_layout();
 		//this.calcular_interes();
 		//this.pintar();
-		this.registro_perfeccionado();
+		//this.registro_perfeccionado();
 		
 		this.setVisible(true);
 		this.repaint();
@@ -169,7 +171,35 @@ public class Ventana extends JFrame{
 		login_contenedor.add(acces_btn);
 		this.repaint();
 		
+		acces_btn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String email = email_input.getText();
+				
+				if (email.equals("")) {
+					System.out.println("Vacío");
+					email_input.setBorder(BorderFactory.createLineBorder(Color.red,3));
+				} else
+					email_input.setBorder(BorderFactory.createLineBorder(Color.green,3));
+				
+				
+				String password = password_input.getText();
+				
+				if (password.equals("")) {
+					System.out.println("Vacío");
+					password_input.setBorder(BorderFactory.createLineBorder(Color.red,3));
+				} else
+					password_input.setBorder(BorderFactory.createLineBorder(Color.green,3));
+				
+				
+				
+			}});
+		
+		
 	}
+	
+	
 	
 	public void registro() {
 		JPanel rgs_container = new JPanel();
@@ -232,6 +262,10 @@ public class Ventana extends JFrame{
 		rgs_container.add(opc_healty);
 		
 		this.repaint();
+		
+		
+		
+		
 		//preferences
 		
 		
@@ -260,6 +294,37 @@ public class Ventana extends JFrame{
 		JButton register_bn = new JButton("crear cuenta");
 		register_bn.setBounds(50, 490, 300, 60);
 		rgs_container.add(register_bn);
+		
+		register_bn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String bioTEXT = bio_text.getText();
+				if (bioTEXT.equals("")) {
+					System.out.println("Vacío");
+					bio_text.setBorder(BorderFactory.createLineBorder(Color.red,3));
+				} else
+					bio_text.setBorder(BorderFactory.createLineBorder(Color.green,3));
+				
+
+				
+				if (accept_terms.isSelected()) {
+					
+					accept_terms.setBorder(BorderFactory.createLineBorder(Color.green,5));
+				} else if (reject_terms.isSelected()) {
+					reject_terms.setBorder(BorderFactory.createLineBorder(Color.green,5));
+				}else
+					accept_terms.setBorder(BorderFactory.createLineBorder(Color.green,5));
+					reject_terms.setBorder(BorderFactory.createLineBorder(Color.green,5));
+					
+				
+
+				
+				
+				
+				
+			}
+		});
 		
 		
 	}
@@ -381,6 +446,8 @@ public class Ventana extends JFrame{
 		
 	
 		this.repaint();
+		
+		
 		
 	}
 
@@ -648,6 +715,8 @@ public class Ventana extends JFrame{
 		acces_btn.setFont(new Font("Arial",Font.ITALIC,16));
 		acces_btn.setLocation(75,240);
 		login_contenedor.add(acces_btn);
+		
+		
 		
 		//boton de CANCELAR
 		JButton acces_btn_dos = new JButton();
