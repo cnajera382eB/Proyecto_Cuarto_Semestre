@@ -86,8 +86,8 @@ public class Ventana extends JFrame{
 		
 		menu_uno.addSeparator();
 		
-		this.login();
-		this.registro();
+		//this.login();
+		//this.registro();
 		//this.users();
 		//this.login_new();
 		//this.calculadora();
@@ -95,7 +95,7 @@ public class Ventana extends JFrame{
 		//this.calcular_interes();
 		//this.pintar();
 		//this.registro_perfeccionado();
-		
+		this.Examen();
 		this.setVisible(true);
 		this.repaint();
 		
@@ -195,6 +195,8 @@ public class Ventana extends JFrame{
 				
 				
 			}});
+		
+	
 		
 		
 	}
@@ -1068,6 +1070,293 @@ public class Ventana extends JFrame{
 		
 	}
 	
+	public void Examen() {
+		JPanel login_contenedor = new JPanel();
+		login_contenedor.setSize(700,80);
+		login_contenedor.setLocation(50,0);
+		login_contenedor.setBackground(Color.blue);
+		//login_contenedor.setOpaque();
+		this.add(login_contenedor);
+		
+		login_contenedor.setLayout(null);
+		
+		this.setLayout(null);
+		
+		JLabel tag_tittle_blue = new JLabel();
+		tag_tittle_blue.setText("Factura en Java- Eclpise- Array list y POO");
+		tag_tittle_blue.setSize(390,50);
+		tag_tittle_blue.setLocation(50,0);
+		tag_tittle_blue.setBackground(Color.blue);
+		tag_tittle_blue.setForeground(Color.white);
+		tag_tittle_blue.setOpaque(true);
+		tag_tittle_blue.setFont(new Font("Arial",Font.PLAIN,16));
+		tag_tittle_blue.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_blue.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor.add(tag_tittle_blue);
+		
+		JLabel tag_tittle_blue_dos = new JLabel();
+		tag_tittle_blue_dos.setText("[Sin base de datos]");
+		tag_tittle_blue_dos.setSize(140,30);
+		tag_tittle_blue_dos.setLocation(50,50);
+		tag_tittle_blue_dos.setBackground(Color.blue);
+		tag_tittle_blue_dos.setForeground(Color.white);
+		tag_tittle_blue_dos.setOpaque(true);
+		tag_tittle_blue_dos.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_blue_dos.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_blue_dos.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor.add(tag_tittle_blue_dos);
+		
+		JPanel login_contenedor_blanco = new JPanel();
+		login_contenedor_blanco.setSize(700,800);
+		login_contenedor_blanco.setLocation(50,50);
+		login_contenedor_blanco.setBackground(Color.white);
+		//login_contenedor.setOpaque();
+		this.add(login_contenedor_blanco);
+		
+		login_contenedor_blanco.setLayout(null);
+		this.setLayout(null);
+		
+		//Mensaje acceder
+		JLabel tag_tittle = new JLabel();
+		tag_tittle.setText("Datos del cliente");
+		tag_tittle.setSize(140,70);
+		tag_tittle.setLocation(50,10);
+		tag_tittle.setBackground(Color.white);
+		tag_tittle.setOpaque(true);
+		tag_tittle.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle);
+		
+		JLabel tag_tittle_dos = new JLabel();
+		tag_tittle_dos.setText("Documento");
+		tag_tittle_dos.setSize(100,70);
+		tag_tittle_dos.setLocation(40,50);
+		tag_tittle_dos.setBackground(Color.white);
+		tag_tittle_dos.setOpaque(true);
+		tag_tittle_dos.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_dos.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_dos.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_dos);
+		
+		JLabel tag_tittle_tres = new JLabel();
+		tag_tittle_tres.setText("Dirección");
+		tag_tittle_tres.setSize(100,70);
+		tag_tittle_tres.setLocation(40,90);
+		tag_tittle_tres.setBackground(Color.white);
+		tag_tittle_tres.setOpaque(true);
+		tag_tittle_tres.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_tres.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_tres.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_tres);
+		
+		JLabel tag_tittle_cuatro = new JLabel();
+		tag_tittle_cuatro.setText("Nombres");
+		tag_tittle_cuatro.setSize(100,70);
+		tag_tittle_cuatro.setLocation(250,50);
+		tag_tittle_cuatro.setBackground(Color.white);
+		tag_tittle_cuatro.setOpaque(true);
+		tag_tittle_cuatro.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_cuatro.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_cuatro.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_cuatro);
+		
+		JLabel tag_tittle_cinco = new JLabel();
+		tag_tittle_cinco.setText("Teléfono");
+		tag_tittle_cinco.setSize(100,70);
+		tag_tittle_cinco.setLocation(250,90);
+		tag_tittle_cinco.setBackground(Color.white);
+		tag_tittle_cinco.setOpaque(true);
+		tag_tittle_cinco.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_cinco.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_cinco.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_cinco);
+		
+		
+		//Contenedor de la direccion
+		JTextField input_documento = new JTextField();
+		input_documento.setSize(100,25);
+		input_documento.setLocation(135,75);
+		login_contenedor_blanco.add(input_documento);
+		
+		JTextField input_direccion = new JTextField();
+		input_direccion.setSize(100,25);
+		input_direccion.setLocation(135,115);
+		login_contenedor_blanco.add(input_direccion);
+		
+		JTextField input_nombres = new JTextField();
+		input_nombres.setSize(100,25);
+		input_nombres.setLocation(360,75);
+		login_contenedor_blanco.add(input_nombres);
+		
+		JTextField input_telefono = new JTextField();
+		input_telefono.setSize(100,25);
+		input_telefono.setLocation(360,115);
+		login_contenedor_blanco.add(input_telefono);
+		
+		JLabel tag_tittle_seis = new JLabel();
+		tag_tittle_seis.setText("Datos de Factura");
+		tag_tittle_seis.setSize(100,70);
+		tag_tittle_seis.setLocation(50,140);
+		tag_tittle_seis.setBackground(Color.white);
+		tag_tittle_seis.setOpaque(true);
+		tag_tittle_seis.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_seis.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_seis.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_seis);
+		
+		JLabel tag_tittle_siete = new JLabel();
+		tag_tittle_siete.setText("Número de facturas:	1");
+		tag_tittle_siete.setSize(140,70);
+		tag_tittle_siete.setLocation(50,190);
+		tag_tittle_siete.setBackground(Color.white);
+		tag_tittle_siete.setOpaque(true);
+		tag_tittle_siete.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_siete.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_siete.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_siete);
+		
+		JLabel tag_tittle_ocho = new JLabel();
+		tag_tittle_ocho.setText("Fecha:		2021/50/21");
+		tag_tittle_ocho.setSize(100,70);
+		tag_tittle_ocho.setLocation(250,190);
+		tag_tittle_ocho.setBackground(Color.white);
+		tag_tittle_ocho.setOpaque(true);
+		tag_tittle_ocho.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_ocho.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_ocho.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_ocho);
+		
+		JLabel tag_tittle_nueve = new JLabel();
+		tag_tittle_nueve.setText("Ver listado de facturas");
+		tag_tittle_nueve.setSize(200,70);
+		tag_tittle_nueve.setLocation(10,250);
+		tag_tittle_nueve.setBackground(Color.white);
+		tag_tittle_nueve.setOpaque(true);
+		tag_tittle_nueve.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_nueve.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_nueve.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_nueve);
+		
+		JLabel tag_tittle_aniadir = new JLabel();
+		tag_tittle_aniadir.setText("Añadir ( + )");
+		tag_tittle_aniadir.setSize(100,70);
+		tag_tittle_aniadir.setLocation(200,250);
+		tag_tittle_aniadir.setBackground(Color.white);
+		tag_tittle_aniadir.setOpaque(true);
+		tag_tittle_aniadir.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_aniadir.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_aniadir.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_aniadir);
+		
+		JLabel tag_tittle_eliminar = new JLabel();
+		tag_tittle_eliminar.setText("Eliminar ( - )");
+		tag_tittle_eliminar.setSize(200,70);
+		tag_tittle_eliminar.setLocation(250,250);
+		tag_tittle_eliminar.setBackground(Color.white);
+		tag_tittle_eliminar.setOpaque(true);
+		tag_tittle_eliminar.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_eliminar.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_eliminar.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_eliminar);
+		
+		
+		String [] table_head = {"Producto", "Cantidad","Valor","Subtotal"};
+		
+		Object [][] table_body = {
+				{"Cereal","5", "1000.00","5000.00"},
+				{"Agua","2", "500.00","1000.00"},
+				{"Leche","2", "300.00","600.00"}
+				};
+		
+		JTable products = new JTable(table_body, table_head);
+		JScrollPane final_table = new JScrollPane(products);
+		final_table.setSize(500,100);
+		final_table.setLocation(30,320);
+		login_contenedor_blanco.add(final_table);
+		login_contenedor_blanco.repaint();
+		
+		JLabel tag_tittle_subtotal = new JLabel();
+		tag_tittle_subtotal.setText("Subtotal:		6600.00");
+		tag_tittle_subtotal.setSize(200,30);
+		tag_tittle_subtotal.setLocation(50,430);
+		tag_tittle_subtotal.setBackground(Color.white);
+		tag_tittle_subtotal.setOpaque(true);
+		tag_tittle_subtotal.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_subtotal.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_subtotal.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_subtotal);
+		
+		JLabel tag_tittle_porcentaje_descuento = new JLabel();
+		tag_tittle_porcentaje_descuento.setText("% de descuento");
+		tag_tittle_porcentaje_descuento.setSize(200,30);
+		tag_tittle_porcentaje_descuento.setLocation(50,460);
+		tag_tittle_porcentaje_descuento.setBackground(Color.white);
+		tag_tittle_porcentaje_descuento.setOpaque(true);
+		tag_tittle_porcentaje_descuento.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_porcentaje_descuento.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_porcentaje_descuento.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_porcentaje_descuento);
+		
+		JLabel tag_tittle_IVA = new JLabel();
+		tag_tittle_IVA.setText("IVA 19%:	1254.00");
+		tag_tittle_IVA.setSize(200,30);
+		tag_tittle_IVA.setLocation(50,490);
+		tag_tittle_IVA.setBackground(Color.white);
+		tag_tittle_IVA.setOpaque(true);
+		tag_tittle_IVA.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_IVA.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_IVA.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_IVA);
+		
+		JLabel tag_tittle_total_factura = new JLabel();
+		tag_tittle_total_factura.setText("Factura_		7,524.00");
+		tag_tittle_total_factura.setSize(200,30);
+		tag_tittle_total_factura.setLocation(50,520);
+		tag_tittle_total_factura.setBackground(Color.white);
+		tag_tittle_total_factura.setOpaque(true);
+		tag_tittle_total_factura.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_total_factura.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_total_factura.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_total_factura);
+		
+		JLabel tag_tittle_valor_descontado = new JLabel();
+		tag_tittle_valor_descontado.setText("Valor descontado:	330.00");
+		tag_tittle_valor_descontado.setSize(200,30);
+		tag_tittle_valor_descontado.setLocation(380,460);
+		tag_tittle_valor_descontado.setBackground(Color.white);
+		tag_tittle_valor_descontado.setOpaque(true);
+		tag_tittle_valor_descontado.setFont(new Font("Arial",Font.PLAIN,12));
+		tag_tittle_valor_descontado.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle_valor_descontado.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor_blanco.add(tag_tittle_valor_descontado);
+
+		
+		//Boton de "recordar"
+		JCheckBox remember = new JCheckBox();
+		remember.setSize(50,50);
+		remember.setLocation(360,450);
+		login_contenedor_blanco.add(remember);
+		
+		JTextField input_descuento = new JTextField();
+		input_descuento.setSize(100,25);
+		input_descuento.setLocation(240,465);
+		login_contenedor_blanco.add(input_descuento);
+		
+		
+		
+		
+		
+		
+		//Boton de Finalizar
+		JButton acces_btn = new JButton();
+		acces_btn.setText("Finalizar factura");
+		acces_btn.setSize(110, 30);
+		acces_btn.setFont(new Font("Arial",Font.ITALIC,9));
+		acces_btn.setLocation(400,575);
+		login_contenedor_blanco.add(acces_btn);
+		this.repaint();
+	}
 	
 
 }
