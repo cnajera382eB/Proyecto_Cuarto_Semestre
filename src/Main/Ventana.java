@@ -95,7 +95,8 @@ public class Ventana extends JFrame{
 		//this.calcular_interes();
 		//this.pintar();
 		//this.registro_perfeccionado();
-		this.Examen();
+		//this.Examen();
+		this.router("login");
 		this.setVisible(true);
 		this.repaint();
 		
@@ -171,6 +172,10 @@ public class Ventana extends JFrame{
 		login_contenedor.add(acces_btn);
 		this.repaint();
 		
+		
+		
+		
+		
 		acces_btn.addActionListener(new ActionListener() {
 
 			@Override
@@ -197,7 +202,20 @@ public class Ventana extends JFrame{
 			}});
 		
 	
-		
+	
+		//Boton de cambiar a login
+				JButton account_F = new JButton();
+				account_F.setText("Ir a Registro");
+				account_F.setSize(170, 35);
+				account_F.setFont(new Font("Arial",Font.ITALIC,12));
+				account_F.setLocation(120,380);
+				login_contenedor.add(account_F);
+				
+				account_F.addActionListener(e ->{
+					this.router("registro");
+				});
+				
+			
 		
 	}
 	
@@ -206,7 +224,7 @@ public class Ventana extends JFrame{
 	public void registro() {
 		JPanel rgs_container = new JPanel();
 		
-		rgs_container.setBounds(500, 50, 400, 800);
+		rgs_container.setBounds(10, 50, 400, 800);
 		rgs_container.setOpaque(true);
 		rgs_container.setBackground(Color.blue);
 		rgs_container.setLayout(null);
@@ -329,6 +347,16 @@ public class Ventana extends JFrame{
 		});
 		
 		
+		JButton acount_new = new JButton();
+		acount_new.setText("Ir a login");
+		acount_new.setSize(170, 35);
+		acount_new.setFont(new Font("Arial",Font.ITALIC,12));
+		acount_new.setLocation(120,300);
+		rgs_container.add(acount_new);
+		
+		acount_new.addActionListener(e ->{
+			this.router("login");
+		});
 	}
 	public void users() {
 		JPanel panel_usuarios = new JPanel();
@@ -1356,6 +1384,23 @@ public class Ventana extends JFrame{
 		acces_btn.setLocation(400,575);
 		login_contenedor_blanco.add(acces_btn);
 		this.repaint();
+	}
+	
+	public void router(String target) {
+		if(target.equals("login")) {
+			getContentPane().removeAll();
+			this.login();
+			
+		}
+		
+		if (target.equals("registro")) {
+			getContentPane().removeAll();
+			this.registro();
+			
+		}
+		
+		this.repaint();
+		this.revalidate();
 	}
 	
 
