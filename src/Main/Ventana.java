@@ -96,7 +96,8 @@ public class Ventana extends JFrame{
 		//this.pintar();
 		//this.registro_perfeccionado();
 		//this.Examen();
-		this.router("login");
+		//this.router("login");
+		this.Mario_art();
 		this.setVisible(true);
 		this.repaint();
 		
@@ -1401,6 +1402,81 @@ public class Ventana extends JFrame{
 		
 		this.repaint();
 		this.revalidate();
+	}
+	
+	public void Mario_art() {
+		
+		JPanel pane = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                
+                super.paintComponent(g);
+                g.setColor(new Color(135, 206, 235));
+                g.fillRect(0, 0, getWidth(), getHeight());
+                g.setColor(new Color(222, 170, 155));
+                g.fillRect(0, 300, getWidth(), 100);
+                drawBlock(g, 100, 50);
+                drawBlock(g, 150, 50);
+                drawBlock(g, 450, 80);
+                drawBlock(g, 30, 150);
+                drawPlatform(g, 120, 200, 80, 100, new Color(230, 170, 160));
+                drawPlatform(g, 200, 150, 80, 150, new Color(100, 160, 210));
+                drawPipe(g, 320, 220);
+                drawPlatform(g, 400, 200, 100, 100, new Color(0, 200, 80));
+            }
+            private void drawBlock(Graphics g, int x, int y) {
+                g.setColor(new Color(255, 150, 80));
+                g.fillRect(x, y, 40, 40);
+
+                g.setColor(Color.BLACK);
+                g.drawRect(x, y, 40, 40);
+                g.setColor(Color.LIGHT_GRAY);
+                g.fillOval(x + 5, y + 5, 8, 8);
+                g.fillOval(x + 27, y + 5, 8, 8);
+            }
+            private void drawPlatform(Graphics g, int x, int y, int w, int h, Color color) {
+                g.setColor(color);
+                g.fillRect(x, y, w, h);
+
+                g.setColor(Color.BLACK);
+                g.drawRect(x, y, w, h);
+                g.setColor(Color.LIGHT_GRAY);
+                g.fillOval(x + 5, y + 5, 10, 10);
+                g.fillOval(x + w - 15, y + 5, 10, 10);
+                g.fillOval(x + 5, y + h - 15, 10, 10);
+                g.fillOval(x + w - 15, y + h - 15, 10, 10);
+            }
+            private void drawPipe(Graphics g, int x, int y) {
+                g.setColor(new Color(0, 180, 0));
+                g.fillRect(x, y, 60, 80);
+                g.setColor(new Color(0, 220, 0));
+                g.fillRect(x - 10, y - 20, 80, 20);
+
+                g.setColor(Color.BLACK);
+                g.drawRect(x, y, 60, 80);
+                g.drawRect(x - 10, y - 20, 80, 20);
+                
+                
+				try {
+					
+					
+					
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+                
+
+            }
+        };
+        
+        
+        
+		
+	
+        pane.setSize(1000,400);
+        pane.setLocation(0,0);
+        this.add(pane);
 	}
 	
 
