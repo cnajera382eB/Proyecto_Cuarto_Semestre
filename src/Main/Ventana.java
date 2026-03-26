@@ -86,6 +86,23 @@ public class Ventana extends JFrame{
 		
 		menu_uno.addSeparator();
 		
+		
+		JMenu menu_tres = new JMenu("Cuenta");
+		Barra.add(menu_tres);
+		JMenuItem opt1_menu3= new JMenuItem("Acceder");
+		menu_tres.add(opt1_menu3);
+		JMenuItem opt2_menu3= new JMenuItem("Registrar");
+		menu_tres.add(opt2_menu3);
+		
+		
+		opt1_menu3.addActionListener(e->{
+			this.router("login");
+		});
+		
+		opt2_menu3.addActionListener(e->{
+			this.router("registro");
+		});
+		
 		//this.login();
 		//this.registro();
 		//this.users();
@@ -96,8 +113,9 @@ public class Ventana extends JFrame{
 		//this.pintar();
 		//this.registro_perfeccionado();
 		//this.Examen();
-		//this.router("login");
-		this.Mario_art();
+		this.router("login");
+		//this.Mario_art();
+		
 		this.setVisible(true);
 		this.repaint();
 		
@@ -216,6 +234,8 @@ public class Ventana extends JFrame{
 					this.router("registro");
 				});
 				
+				
+		
 			
 		
 	}
