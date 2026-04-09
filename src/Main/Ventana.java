@@ -67,7 +67,7 @@ public class Ventana extends JFrame{
 		
 		JMenuBar Barra = new JMenuBar();
 		this.setJMenuBar(Barra);
-		JMenu menu_uno = new JMenu("Archivo");
+		JMenu menu_uno = new JMenu("Inicio");
 		Barra.add(menu_uno);
 		JMenuItem opt1_menu1= new JMenuItem("Abrir");
 		menu_uno.add(opt1_menu1);
@@ -89,10 +89,12 @@ public class Ventana extends JFrame{
 		
 		JMenu menu_tres = new JMenu("Cuenta");
 		Barra.add(menu_tres);
-		JMenuItem opt1_menu3= new JMenuItem("Acceder");
+		JMenuItem opt1_menu3= new JMenuItem("Login");
 		menu_tres.add(opt1_menu3);
-		JMenuItem opt2_menu3= new JMenuItem("Registrar");
+		JMenuItem opt2_menu3= new JMenuItem("Registro");
 		menu_tres.add(opt2_menu3);
+		JMenuItem opt3_menu3= new JMenuItem("Recuperación");
+		menu_tres.add(opt3_menu3);
 		
 		
 		opt1_menu3.addActionListener(e->{
@@ -102,6 +104,43 @@ public class Ventana extends JFrame{
 		opt2_menu3.addActionListener(e->{
 			this.router("registro");
 		});
+		
+		menu_tres.addSeparator();
+		
+		JMenu menu_cuatro = new JMenu("Ayuda");
+		Barra.add(menu_cuatro);
+		JMenuItem opt1_menu4= new JMenuItem("Ayudar a crear un usuario");
+		menu_cuatro.add(opt1_menu4);
+		JMenuItem opt2_menu4= new JMenuItem("Ayuda de acceso al sistema");
+		menu_cuatro.add(opt2_menu4);
+		JMenuItem opt3_menu4= new JMenuItem("Ayuda a la recuperación de contraseña");
+		menu_cuatro.add(opt3_menu4);
+		
+		opt1_menu4.addActionListener(e->{
+			this.router("ayuda");
+		});
+		
+		
+		menu_cuatro.addSeparator();
+		
+		
+		JMenu menu_estudiantes = new JMenu("Usuarios");
+		Barra.add(menu_estudiantes);
+		JMenuItem opt1_menu_estudiantes= new JMenuItem("Alta de usuario");
+		menu_estudiantes.add(opt1_menu_estudiantes);
+		JMenuItem opt2_menu_estudiantes= new JMenuItem("Baja de usuario");
+		menu_estudiantes.add(opt2_menu_estudiantes);
+		JMenuItem opt3_menu_estudiantes= new JMenuItem("Consultar usuario");
+		menu_estudiantes.add(opt3_menu_estudiantes);
+		
+		opt1_menu_estudiantes.addActionListener(e->{
+			this.router("usuario");
+		});
+		
+		
+		
+		menu_estudiantes.addSeparator();
+		
 		
 		//this.login();
 		//this.registro();
@@ -1420,6 +1459,18 @@ public class Ventana extends JFrame{
 			
 		}
 		
+		if (target.equals("ayuda")) {
+			getContentPane().removeAll();
+			this.ayuda();
+			
+		}
+		
+		if (target.equals("usuario")) {
+			getContentPane().removeAll();
+			this.usuario();
+			
+		}
+		
 		this.repaint();
 		this.revalidate();
 	}
@@ -1497,6 +1548,54 @@ public class Ventana extends JFrame{
         pane.setSize(1000,400);
         pane.setLocation(0,0);
         this.add(pane);
+	}
+	
+	public void ayuda() {
+		JPanel login_contenedor = new JPanel();
+		login_contenedor.setSize(400,400);
+		login_contenedor.setLocation(50,50);
+		login_contenedor.setBackground(Color.BLACK);
+		//login_contenedor.setOpaque();
+		this.add(login_contenedor);
+		
+		login_contenedor.setLayout(null);
+		this.setLayout(null);
+		
+		//Mensaje acceder
+		JLabel tag_tittle = new JLabel();
+		tag_tittle.setText("Ayuda");
+		tag_tittle.setSize(150,120);
+		tag_tittle.setLocation(125,20);
+		tag_tittle.setBackground(Color.white);
+		tag_tittle.setOpaque(true);
+		tag_tittle.setFont(new Font("Arial",Font.PLAIN,22));
+		tag_tittle.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor.add(tag_tittle);
+	}
+	
+	public void usuario() {
+		JPanel login_contenedor = new JPanel();
+		login_contenedor.setSize(400,400);
+		login_contenedor.setLocation(50,50);
+		login_contenedor.setBackground(Color.GRAY);
+		//login_contenedor.setOpaque();
+		this.add(login_contenedor);
+		
+		login_contenedor.setLayout(null);
+		this.setLayout(null);
+		
+		//Mensaje acceder
+		JLabel tag_tittle = new JLabel();
+		tag_tittle.setText("Usuario");
+		tag_tittle.setSize(150,120);
+		tag_tittle.setLocation(125,20);
+		tag_tittle.setBackground(Color.GRAY);
+		tag_tittle.setOpaque(true);
+		tag_tittle.setFont(new Font("Arial",Font.PLAIN,22));
+		tag_tittle.setVerticalAlignment(JLabel.CENTER);
+		tag_tittle.setHorizontalAlignment(JLabel.CENTER);
+		login_contenedor.add(tag_tittle);
 	}
 	
 
