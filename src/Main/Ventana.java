@@ -152,9 +152,9 @@ public class Ventana extends JFrame{
 		//this.pintar();
 		//this.registro_perfeccionado();
 		//this.Examen();
-		this.router("login");
+		//this.router("login");
 		//this.Mario_art();
-		
+		this.dibujo_paint();
 		this.setVisible(true);
 		this.repaint();
 		
@@ -1598,5 +1598,46 @@ public class Ventana extends JFrame{
 		login_contenedor.add(tag_tittle);
 	}
 	
+	public void dibujo_paint() {
+	    JPanel pane = new JPanel() {
+	        @Override
+	        protected void paintComponent(Graphics g) {
+	            super.paintComponent(g);
+	            Graphics2D g2d = (Graphics2D) g;
+
+	            g2d.setColor(Color.BLACK);
+	            g2d.setFont(new Font("Arial", Font.BOLD, 20));
+	            g2d.drawString("Paint app javascript", 200, 40);
+
+	            g2d.setColor(Color.BLUE);
+	            int[] xStar = {50, 70, 90, 60, 80};
+	            int[] yStar = {150, 110, 150, 130, 130};
+	            g2d.fillPolygon(xStar, yStar, xStar.length);
+
+	            g2d.setColor(Color.YELLOW);
+	            g2d.fillOval(200, 100, 100, 100);
+	            g2d.setColor(Color.BLACK);
+	            g2d.fillOval(230, 130, 10, 10);
+	            g2d.fillOval(260, 130, 10, 10);
+	            g2d.drawArc(225, 150, 50, 30, 0, -180);
+
+	            g2d.setColor(Color.RED);
+	            int[] xWaveR = {200, 220, 240, 260, 280, 300};
+	            int[] yWaveR = {90, 80, 90, 80, 90, 80};
+	            g2d.drawPolyline(xWaveR, yWaveR, xWaveR.length);
+	            
+	            g2d.setColor(Color.RED);
+                g2d.fillRoundRect(300, 250, 100, 95, 10, 10);
+                g2d.setColor(Color.black);
+                g2d.fillRoundRect(300, 250, 100, 95, 10, 10);
+                
+            }
+	    };
+
+	    pane.setSize(1000, 700);
+	    pane.setLocation(0, 0);
+	    this.add(pane);
+	}
+
 
 }
