@@ -53,16 +53,7 @@ public class Ventana extends JFrame{
 		this.setLayout(null);
 		
 		
-		
-		try {
-			Image iconImage = ImageIO.read(getClass().getResource("/Imagenes/JugadorDosAnimated.gif"));
-			
-			this.setIconImage(iconImage);
-		} catch (Exception e) {
 
-			e.printStackTrace();
-			// TODO: handle exception
-		}
 		
 		
 		JMenuBar Barra = new JMenuBar();
@@ -278,6 +269,7 @@ public class Ventana extends JFrame{
 			
 		
 	}
+	
 	
 	
 	
@@ -1638,6 +1630,12 @@ public class Ventana extends JFrame{
 	    pane.setLocation(0, 0);
 	    this.add(pane);
 	}
+	
+	public void brocha_limpeza () {
+		
+	}
 
-
+	
+	
+	
 }
