@@ -10,8 +10,8 @@ public class AuthControllers {
 			
 	}
 	
-	public void login() {
+	/*public void login() {
 		vista.login;
-	}
+	}*/
 
 }
